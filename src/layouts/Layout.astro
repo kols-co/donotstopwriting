@@ -69,18 +69,89 @@ const {
 			}
 		</script>
 
-		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8K56WV409" is:inline></script>
+		<!-- Consent Manager: gates Google Analytics & Google AdSense behind user consent (GDPR/ePrivacy) -->
 		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-Z8K56WV409');
-		</script>
+			(function () {
+				var CONSENT_KEY = 'dsw-consent';
+				var consent = null;
+				try { consent = localStorage.getItem(CONSENT_KEY); } catch (e) {}
 
-		<!-- Google AdSense -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3867408802205981"
-     crossorigin="anonymous"></script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag() { dataLayer.push(arguments); }
+
+				// Google Consent Mode v2: default to denied until the user makes a choice
+				gtag('consent', 'default', {
+					ad_storage: 'denied',
+					ad_user_data: 'denied',
+					ad_personalization: 'denied',
+					analytics_storage: 'denied',
+					functionality_storage: 'granted',
+					personalization_storage: 'denied',
+					security_storage: 'granted',
+					wait_for_update: 500
+				});
+
+				var gaLoaded = false;
+				var adLoaded = false;
+
+				function loadScript(src, crossOrigin) {
+					var s = document.createElement('script');
+					s.async = true;
+					s.src = src;
+					if (crossOrigin) s.crossOrigin = 'anonymous';
+					document.head.appendChild(s);
+				}
+
+				function loadAnalytics() {
+					if (gaLoaded) return;
+					gaLoaded = true;
+					loadScript('https://www.googletagmanager.com/gtag/js?id=G-Z8K56WV409');
+					gtag('js', new Date());
+					gtag('config', 'G-Z8K56WV409');
+				}
+
+				function loadAdSense() {
+					if (adLoaded) return;
+					adLoaded = true;
+					loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3867408802205981', true);
+				}
+
+				if (consent === 'accepted') {
+					gtag('consent', 'update', {
+						ad_storage: 'granted',
+						ad_user_data: 'granted',
+						ad_personalization: 'granted',
+						analytics_storage: 'granted'
+					});
+					loadAnalytics();
+					loadAdSense();
+				}
+
+				window.__dswConsent = consent;
+				window.__dswSetConsent = function (value) {
+					try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+					window.__dswConsent = value;
+
+					if (value === 'accepted') {
+						gtag('consent', 'update', {
+							ad_storage: 'granted',
+							ad_user_data: 'granted',
+							ad_personalization: 'granted',
+							analytics_storage: 'granted'
+						});
+						loadAnalytics();
+						loadAdSense();
+					} else {
+						gtag('consent', 'update', {
+							ad_storage: 'denied',
+							ad_user_data: 'denied',
+							ad_personalization: 'denied',
+							analytics_storage: 'denied'
+						});
+					}
+				};
+			})();
+		</script>
 
 		<script is:inline>
 			const theme = (() => {
@@ -173,6 +244,71 @@ const {
 				})();
 			</script>
 		)}
+		<!-- Cookie Consent Banner (shown until the user makes a choice) -->
+		<div id="cookie-consent" role="dialog" aria-modal="false" aria-label="Cookie consent"
+			class="fixed bottom-0 left-0 right-0 z-[200] transition-all duration-500 ease-out translate-y-full opacity-0">
+			<div class="max-w-3xl mx-auto m-4 p-5 md:p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#161616] shadow-[0_16px_48px_rgba(0,0,0,0.18)] dark:shadow-[0_16px_48px_rgba(0,0,0,0.6)]">
+				<div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+					<div class="flex-1 font-sans text-[13px] leading-relaxed text-neutral-600 dark:text-neutral-300">
+						<p class="font-serif text-[15px] font-bold text-primary dark:text-white mb-1">We value your privacy</p>
+						<p>
+							We use cookies and similar technologies, including from third parties such as Google,
+							to measure site usage and serve relevant advertising. You can choose to accept or decline
+							non-essential cookies below. Read our
+							<a href="/privacy" class="underline hover:opacity-80 font-semibold no-underline">Privacy Policy</a>
+							and
+							<a href="/terms" class="underline hover:opacity-80 font-semibold no-underline">Terms</a>
+							for full details. Your choice is saved locally and can be changed at any time.
+						</p>
+					</div>
+					<div class="flex flex-row items-center gap-3 md:flex-col md:items-stretch">
+						<button id="cc-accept"
+							class="px-5 py-2.5 bg-[#111111] dark:bg-white text-white dark:text-[#111111] hover:bg-[#222222] dark:hover:bg-neutral-100 text-xs font-bold rounded-full transition-colors cursor-pointer select-none">
+							Accept
+						</button>
+						<button id="cc-decline"
+							class="px-5 py-2.5 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-900 text-xs font-bold rounded-full transition-colors cursor-pointer select-none">
+							Decline
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script is:inline>
+			(function () {
+				var banner = document.getElementById('cookie-consent');
+				if (!banner) return;
+
+				// If a choice was already made (or stored), never show the banner
+				if (window.__dswConsent !== null && window.__dswConsent !== undefined) {
+					banner.remove();
+					return;
+				}
+
+				function hideBanner() {
+					banner.classList.remove('translate-y-full');
+					banner.classList.add('opacity-0');
+					setTimeout(function () { banner.remove(); }, 500);
+				}
+
+				document.getElementById('cc-accept').addEventListener('click', function () {
+					if (window.__dswSetConsent) window.__dswSetConsent('accepted');
+					hideBanner();
+				});
+
+				document.getElementById('cc-decline').addEventListener('click', function () {
+					if (window.__dswSetConsent) window.__dswSetConsent('declined');
+					hideBanner();
+				});
+
+				// Slide the banner in after the page settles
+				setTimeout(function () {
+					banner.classList.remove('translate-y-full', 'opacity-0');
+				}, 600);
+			})();
+		</script>
+
 		<Analytics />
 	</body>
 </html>

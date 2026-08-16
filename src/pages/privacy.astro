@@ -4,8 +4,8 @@ import ThemeToggle from '../components/ThemeToggle';
 ---
 
 <Layout 
-	title="Privacy Policy - Do Not Stop Writing | 100% Private Sessions"
-	description="Privacy Policy for Do Not Stop Writing. Read how we protect your writing sessions and keep your drafts 100% private."
+	title="Privacy Policy - Do Not Stop Writing | Cookies & Advertising"
+	description="Privacy Policy for Do Not Stop Writing. Learn how we use cookies, advertising, and how your writing sessions stay private."
 >
 	<!-- Sticky top navigation bar -->
 	<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#111111] border-b border-neutral-100 dark:border-neutral-900 transition-colors duration-300">
@@ -49,7 +49,7 @@ import ThemeToggle from '../components/ThemeToggle';
 					Privacy Policy
 				</h1>
 				<p class="text-sm text-neutral-400 dark:text-neutral-500 font-sans">
-					Last updated: June 2026
+					Last updated: August 2026
 				</p>
 			</div>
 
@@ -75,43 +75,84 @@ import ThemeToggle from '../components/ThemeToggle';
 					</p>
 					<div class="space-y-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-750 dark:text-neutral-350 font-sans text-[15px]">
 						<p>Theme selection (light or dark mode preference)</p>
+						<p>Cookie consent choice (so we know whether to load advertising and analytics scripts)</p>
 					</div>
 				</section>
 
 				<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-				<!-- Section 2 -->
-				<section class="space-y-4">
-					<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-						2. Cookies
-					</h2>
-					<p>
-						We do not use cookie identifiers, tracking beacons, or third-party marketing pixels to analyze your behavior or serve targeted advertisements. The application is cookie-free.
-					</p>
-				</section>
+			<!-- Section 2 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					2. Cookies and Similar Technologies
+				</h2>
+				<p>
+					We use cookies and similar technologies to operate, measure, and improve the Website and to serve advertising. Cookies are small text files stored on your device. They help us remember your preferences and allow third parties, such as Google, to provide the services described below.
+				</p>
+				<p class="font-bold text-primary dark:text-white">
+					Strictly necessary storage:
+				</p>
+				<div class="space-y-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 font-sans text-[15px]">
+					<p>Theme selection (light or dark mode) is saved in your browser's local storage.</p>
+					<p>Your cookie consent choice is saved locally so we know whether you have accepted or declined non-essential cookies.</p>
+				</div>
+				<p>
+					<strong>Analytics and advertising cookies:</strong> With your consent, Google Analytics and Google AdSense may set cookies (including the <em>_ga</em>, <em>NID</em>, and related identifiers) to measure how the Website is used and to serve ads based on your visits to this and other websites. We only load these scripts after you accept non-essential cookies through our consent banner, and you may change or withdraw your choice at any time.
+				</p>
+				<p>
+					You can block or delete cookies through your browser settings, or opt out of personalized advertising using the options described in Section 3 below.
+				</p>
+			</section>
+
+			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
+
+			<!-- Section 3 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					3. Advertising
+				</h2>
+				<p>
+					The Website displays advertising served by <strong>Google AdSense</strong> and may display advertising from other third-party ad networks. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this Website or other websites.
+				</p>
+				<div class="space-y-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 font-sans text-[15px]">
+					<p>Google's use of advertising cookies enables it and its partners to serve ads based on your visits to this Website and/or other sites on the Internet.</p>
+					<p>You may opt out of personalized advertising by visiting Google's <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-85 font-semibold">Ads Settings</a>.</p>
+					<p>You can opt out of some third-party vendors' use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-85 font-semibold">www.aboutads.info</a>.</p>
+					<p>For more information about how Google uses data when you use our site, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-85 font-semibold">How Google uses data when you use our partners' sites</a>.</p>
+				</div>
+				<p>
+					We display only <strong>non-personalized advertising</strong> to visitors who decline consent or who are located in the European Economic Area / UK, in line with applicable privacy laws. Personalized advertising may be shown only to visitors who accept.
+				</p>
+			</section>
+
+			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
+
+			<!-- Section 4 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					4. Third-Party Services
+				</h2>
+				<p>
+					We do not sell, trade, or rent personal data. To operate and improve the Website, we use the following third-party services:
+				</p>
+				<div class="space-y-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 font-sans text-[15px]">
+					<p><strong>Google Analytics</strong> – anonymized usage statistics (loaded only with your consent).</p>
+					<p><strong>Google AdSense</strong> – advertising (loaded only with your consent).</p>
+					<p><strong>Vercel Web Analytics</strong> – privacy-friendly, cookieless aggregate visitor statistics.</p>
+					<p><strong>Formspree</strong> – contact form delivery; messages you submit are forwarded to our email.</p>
+				</div>
+				<p>
+					<strong>WebRTC Connection Signaling:</strong> The dropdata file sharing service uses PeerJS cloud infrastructure to establish the initial handshake/connection between browser tabs. No file contents or metadata are shared with or stored on PeerJS servers; they only facilitate the direct connection, after which all data moves directly between the two browser clients.
+				</p>
+			</section>
 
 				<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-				<!-- Section 3 -->
-				<section class="space-y-4">
-					<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-						3. Third-Party Services
-					</h2>
-					<p>
-						We do not sell, trade, or share any personal data with third-party service providers. In the event we use hosting services or static analytics, no identifiable text drafts or user-specific data is ever shared.
-					</p>
-					<p>
-						<strong>WebRTC Connection Signaling:</strong> The dropdata file sharing service uses PeerJS cloud infrastructure to establish the initial handshake/connection between browser tabs. No file contents or metadata are shared with or stored on PeerJS servers; they only facilitate the direct connection, after which all data moves directly between the two browser clients.
-					</p>
-				</section>
-
-				<hr class="border-t border-neutral-150 dark:border-neutral-900" />
-
-				<!-- Section 4 -->
-				<section class="space-y-4">
-					<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-						4. Data Retention
-					</h2>
+			<!-- Section 5 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					5. Data Retention
+				</h2>
 					<p>
 						Since Do Not Stop Writing and dropdata run entirely client-side, we do not store or retain your drafts, shared files, or connection logs. Any data entered into a writing session or transferred during a file sharing session exists only in active memory. Once a tab is closed, refreshed, or a session ends, all associated data is permanently erased and cannot be recovered.
 					</p>
@@ -119,11 +160,11 @@ import ThemeToggle from '../components/ThemeToggle';
 
 				<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-				<!-- Section 5 -->
-				<section class="space-y-4">
-					<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-						5. Children's Privacy
-					</h2>
+			<!-- Section 6 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					6. Children's Privacy
+				</h2>
 					<p>
 						Do Not Stop Writing is not designed for or targeted to children under the age of 13. We do not knowingly collect, store, or solicit personal data from children. If you believe a child has provided us with personal information, please contact us.
 					</p>
@@ -131,26 +172,37 @@ import ThemeToggle from '../components/ThemeToggle';
 
 				<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-				<!-- Section 6 -->
-				<section class="space-y-4">
-					<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-						6. Your Rights
-					</h2>
-					<p>
-						Because we do not collect identifiable personal data, there is typically nothing for us to retrieve, correct, or delete on your behalf. If you have concerns, please contact us and we will respond promptly.
-					</p>
-					<p>
-						If you are located in the European Economic Area, you have the right to access, rectify, or erase any personal data we hold, and to lodge a complaint with your local supervisory authority.
-					</p>
-				</section>
+			<!-- Section 7 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					7. Your Rights
+				</h2>
+				<p>
+					Because we do not collect identifiable personal data to run the core tools, there is typically nothing for us to retrieve, correct, or delete on your behalf. However, you have the following rights regarding cookies and advertising:
+				</p>
+				<div class="space-y-2 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 font-sans text-[15px]">
+					<p>Change or withdraw your cookie/consent choice at any time (via your browser settings or by clearing your local storage).</p>
+					<p>Opt out of personalized advertising through Google Ads Settings and www.aboutads.info.</p>
+					<p>Request details about any personal data we may hold about you (we hold none beyond what is described in this policy).</p>
+				</div>
+				<p>
+					If you are located in the European Economic Area, you have the right to access, rectify, or erase any personal data we hold, and to lodge a complaint with your local supervisory authority.
+				</p>
+				<p>
+					Under the California Consumer Privacy Act (CCPA), California residents have the right to know what personal information is collected about them and to request its deletion. We do not sell personal information.
+				</p>
+				<p>
+					If you have concerns, please contact us and we will respond promptly.
+				</p>
+			</section>
 
 				<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-				<!-- Section 7 -->
-				<section class="space-y-4">
-					<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-						7. Changes to This Policy
-					</h2>
+			<!-- Section 8 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					8. Changes to This Policy
+				</h2>
 					<p>
 						We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision. Continued use of the service after changes are posted constitutes acceptance of the revised policy.
 					</p>
@@ -158,11 +210,11 @@ import ThemeToggle from '../components/ThemeToggle';
 
 				<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-				<!-- Section 8 -->
-				<section class="space-y-4">
-					<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-						8. Contact
-					</h2>
+			<!-- Section 9 -->
+			<section class="space-y-4">
+				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
+					9. Contact
+				</h2>
 					<p>
 						Questions about this Privacy Policy? <a href="/contact" class="text-primary dark:text-white underline hover:opacity-85 font-semibold">Contact us here</a>.
 					</p>

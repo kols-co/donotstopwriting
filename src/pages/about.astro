@@ -52,20 +52,25 @@ import ThemeToggle from '../components/ThemeToggle';
 					The Free Online Writing Challenge Tool That Helps You Beat Writer's Block
 				</h2>
 				<p class="text-sm text-neutral-400 dark:text-neutral-500 font-sans">
-					Last updated: June 2026
+					Last updated: August 2026
+				</p>
+			</div>
+
+			<!-- Publisher & Contact Disclosure -->
+			<div class="bg-neutral-50 dark:bg-neutral-900/50 p-6 rounded-2xl border border-neutral-100 dark:border-neutral-800 font-sans text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 space-y-3">
+				<h2 class="text-base font-bold text-primary dark:text-white">Who We Are</h2>
+				<p>
+					<strong>Do Not Stop Writing</strong> is an independent web application created by <strong>Deepanshu Kashyap</strong>. Alongside the writing app, we also publish a small suite of free, privacy-first browser tools — you can explore them below.
 				</p>
 			</div>
 
 			<!-- Intro Body Content -->
 			<div class="space-y-6 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300">
 				<p>
-					<strong>Do Not Stop Writing</strong> is a free online writing tool designed to help writers, students, bloggers, authors, and content creators overcome writer's block and build consistent writing habits.
+					<strong>Do Not Stop Writing</strong> is a free online writing tool with one simple rule: keep typing or lose your progress. If you pause for more than a few seconds, the screen blurs and your session is deleted — forcing you to focus on creating instead of perfecting.
 				</p>
 				<p>
-					Unlike traditional writing apps that encourage constant editing and distractions, Do Not Stop Writing challenges users to keep writing continuously until they reach their selected goal. Whether you choose a writing timer or a word-count target, the objective remains the same: keep moving forward and focus on creating instead of perfecting.
-				</p>
-				<p>
-					Our platform works directly in your browser, allowing you to start writing instantly without creating an account, downloading software, or installing extensions.
+					Everything runs directly in your browser. There is no account, no install, and no background tracking — your words never leave your device.
 				</p>
 			</div>
 			<!-- Open Source Highlight Callout -->
@@ -78,160 +83,63 @@ import ThemeToggle from '../components/ThemeToggle';
 			<!-- The Creator Section -->
 			<div class="space-y-6">
 				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-					The Team
+					The Creator
 				</h2>
 				<div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 pt-4">
-					<!-- Interactive Card Deck Container -->
-					<div id="profile-deck" class="deck-container relative w-48 h-64 md:w-56 md:h-72 mx-auto md:mx-0 flex-shrink-0 select-none cursor-pointer">
-						<!-- Card 1: Deepanshu (Developer) -->
-						<div id="card-developer" class="profile-card absolute inset-0 bg-white dark:bg-[#1C1C1E] p-3 pb-12 border border-neutral-200/50 dark:border-neutral-800 shadow-[0_12px_28px_rgba(0,0,0,0.12)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.4)] rounded-xl transform" data-state="front">
-							<img 
-								src="/deepanshu.jpg" 
-								alt="Deepanshu Kashyap" 
-								class="w-full h-full object-cover rounded-lg border border-neutral-100 dark:border-neutral-900 pointer-events-none"
-							/>
-							<div class="absolute bottom-3 left-0 right-0 text-center font-serif italic text-xs tracking-wide text-neutral-500 dark:text-neutral-400">
-								Deepanshu Kashyap
-							</div>
-						</div>
-
-						<!-- Card 2: Divya (Co-developer & Marketing Head) -->
-						<div id="card-codeveloper" class="profile-card absolute inset-0 bg-white dark:bg-[#1C1C1E] p-3 pb-12 border border-neutral-200/50 dark:border-neutral-800 shadow-[0_12px_28px_rgba(0,0,0,0.12)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.4)] rounded-xl transform" data-state="back">
-							<div class="w-full h-full overflow-hidden rounded-lg border border-neutral-100 dark:border-neutral-900">
-								<img 
-									src="/divia.png" 
-									alt="Divya Kashyap" 
-									class="w-full h-full object-cover pointer-events-none scale-[1.22] origin-[center_35%] transition-transform duration-500"
-								/>
-							</div>
-							<div class="absolute bottom-3 left-0 right-0 text-center font-serif italic text-xs tracking-wide text-neutral-500 dark:text-neutral-400">
-								Divya Kashyap
-							</div>
-						</div>
+					<!-- Profile Photo -->
+					<div class="relative w-48 h-56 md:w-56 md:h-64 flex-shrink-0 mx-auto md:mx-0 overflow-hidden rounded-xl border border-neutral-200/50 dark:border-neutral-800 shadow-[0_12px_28px_rgba(0,0,0,0.12)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+						<img
+							src="/deepanshu.jpg"
+							alt="Deepanshu Kashyap"
+							class="w-full h-full object-cover"
+						/>
 					</div>
 
-					<!-- Details Panel Container -->
-					<div class="flex-1 w-full bio-container">
-						<!-- Bio 1: Deepanshu (Developer) -->
-						<div id="bio-developer" class="bio-panel space-y-4 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300 text-center md:text-left font-serif" data-state="active">
-							<div class="space-y-1">
-								<h3 class="text-lg md:text-xl font-bold text-primary dark:text-white">Deepanshu Kashyap</h3>
-								<p class="text-xs font-sans font-bold text-[#E52525] tracking-wider uppercase">Developer & Writer</p>
-							</div>
-							<p>
-								My name is <strong>Deepanshu Kashyap</strong>, an aspiring developer and writer. I developed this tool because I got stuck in the slumber of perfectionism and was never able to complete my projects, looking to AI to help fix it.
-							</p>
-							<p>
-								I use this website to write whatever I want—simply putting my brain out on the page and fixing it later.
-							</p>
-							<p class="border-l-2 border-[#E52525] pl-4 italic font-medium text-neutral-900 dark:text-neutral-200">
-								This is the original website for this idea—other tools you see online today are copies of this project.
-							</p>
-							<div class="flex flex-wrap gap-3 pt-2 justify-center md:justify-start">
-								<!-- GitHub Link -->
-								<a 
-									href="https://github.com/DeepanshuK2002" 
-									target="_blank" 
-									rel="noopener noreferrer" 
-									class="inline-flex items-center gap-2 px-4 py-2 border border-neutral-200 dark:border-neutral-850 rounded-lg text-sm font-sans font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-900 text-primary dark:text-neutral-200 shadow-sm transition-all duration-200 no-underline cursor-pointer"
-								>
-									<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-										<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.27C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-									</svg>
-									GitHub
-								</a>
-								<!-- X Link -->
-								<a 
-									href="https://x.com/Deepanshuk2002" 
-									target="_blank" 
-									rel="noopener noreferrer" 
-									class="inline-flex items-center gap-2 px-4 py-2 border border-neutral-200 dark:border-neutral-850 rounded-lg text-sm font-sans font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-900 text-primary dark:text-neutral-200 shadow-sm transition-all duration-200 no-underline cursor-pointer"
-								>
-									<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-										<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-									</svg>
-									Follow on X
-								</a>
-							</div>
+					<!-- Bio -->
+					<div class="flex-1 w-full space-y-4 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300 text-center md:text-left font-serif">
+						<div class="space-y-1">
+							<h3 class="text-lg md:text-xl font-bold text-primary dark:text-white">Deepanshu Kashyap</h3>
+							<p class="text-xs font-sans font-bold text-[#E52525] tracking-wider uppercase">Developer & Writer</p>
 						</div>
-
-						<!-- Bio 2: Divya (Co-developer) -->
-						<div id="bio-codeveloper" class="bio-panel space-y-4 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300 text-center md:text-left font-serif" data-state="inactive">
-							<div class="space-y-1">
-								<h3 class="text-lg md:text-xl font-bold text-primary dark:text-white">Divya Kashyap</h3>
-								<p class="text-xs font-sans font-bold text-[#E52525] tracking-wider uppercase">Co-Developer & Marketing Head</p>
-							</div>
-							<p>
-								Hi, I'm <strong>Divya Kashyap</strong>, the co-developer of this website and the sister of the lead developer. I developed DropData, our file-sharing and transfer service, enabling users to securely and efficiently share files through the platform.
-							</p>
-							<p>
-								I also serve as the Head of Marketing, where I focus on branding, outreach, user engagement, and helping our platform grow. I'm excited to be part of the team building, improving, and expanding this website to provide the best possible experience for our users.
-							</p>
-							<p class="border-l-2 border-[#E52525] pl-4 italic font-medium text-neutral-900 dark:text-neutral-200">
-								Our only motive is to provide you one functionality, but the functionality be the best.
-							</p>
+						<p>
+							My name is <strong>Deepanshu Kashyap</strong>, an aspiring developer and writer. I developed this tool because I got stuck in the slumber of perfectionism and was never able to complete my projects, looking to AI to help fix it.
+						</p>
+						<p>
+							I use this website to write whatever I want—simply putting my brain out on the page and fixing it later.
+						</p>
+						<p class="border-l-2 border-[#E52525] pl-4 italic font-medium text-neutral-900 dark:text-neutral-200">
+							This is the original website for this idea—other tools you see online today are copies of this project.
+						</p>
+						<div class="flex flex-wrap gap-3 pt-2 justify-center md:justify-start">
+							<!-- GitHub Link -->
+							<a 
+								href="https://github.com/DeepanshuK2002" 
+								target="_blank" 
+								rel="noopener noreferrer" 
+								class="inline-flex items-center gap-2 px-4 py-2 border border-neutral-200 dark:border-neutral-850 rounded-lg text-sm font-sans font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-900 text-primary dark:text-neutral-200 shadow-sm transition-all duration-200 no-underline cursor-pointer"
+							>
+								<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+									<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.27C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+								</svg>
+								GitHub
+							</a>
+							<!-- X Link -->
+							<a 
+								href="https://x.com/Deepanshuk2002" 
+								target="_blank" 
+								rel="noopener noreferrer" 
+								class="inline-flex items-center gap-2 px-4 py-2 border border-neutral-200 dark:border-neutral-850 rounded-lg text-sm font-sans font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-900 text-primary dark:text-neutral-200 shadow-sm transition-all duration-200 no-underline cursor-pointer"
+							>
+								<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+									<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+								</svg>
+								Follow on X
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<script>
-				// Selectors
-				const deck = document.getElementById('profile-deck');
-				const cardDev = document.getElementById('card-developer');
-				const cardCoDev = document.getElementById('card-codeveloper');
-				const bioDev = document.getElementById('bio-developer');
-				const bioCoDev = document.getElementById('bio-codeveloper');
-
-				let isDevActive = true;
-				let isAnimating = false;
-
-				function shuffle() {
-					if (isAnimating) return;
-					isAnimating = true;
-
-					const activeCard = isDevActive ? cardDev : cardCoDev;
-					const inactiveCard = isDevActive ? cardCoDev : cardDev;
-					const activeBio = isDevActive ? bioDev : bioCoDev;
-					const inactiveBio = isDevActive ? bioCoDev : bioDev;
-
-					// 1. Slide out active card
-					if (activeCard) {
-						activeCard.classList.add('shuffle-out');
-					}
-
-					// 2. Swapping states mid-way through slide-out
-					setTimeout(() => {
-						if (activeCard && inactiveCard && activeBio && inactiveBio) {
-							// Swap state attributes
-							activeCard.setAttribute('data-state', 'back');
-							inactiveCard.setAttribute('data-state', 'front');
-
-							activeBio.setAttribute('data-state', 'inactive');
-							inactiveBio.setAttribute('data-state', 'active');
-						}
-
-						// Toggle status flag
-						isDevActive = !isDevActive;
-
-						// 3. Slide back in from behind
-						setTimeout(() => {
-							if (activeCard) {
-								activeCard.classList.remove('shuffle-out');
-							}
-							// Settle timeout to match the 800ms total transition
-							setTimeout(() => {
-								isAnimating = false;
-							}, 320);
-						}, 100);
-					}, 380);
-				}
-
-				// Click triggers
-				if (deck) {
-					deck.addEventListener('click', shuffle);
-				}
-			</script>
 			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
 			<!-- Original Icon Section -->
@@ -493,127 +401,44 @@ import ThemeToggle from '../components/ThemeToggle';
 
 			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-			<!-- Why We Created Section -->
-			<div class="space-y-4 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300">
-				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-					Why We Created Do Not Stop Writing
-				</h2>
-				<p>
-					Many people struggle to start writing.
-				</p>
-				<p>
-					Some stare at a blank page for hours. Others constantly edit every sentence before finishing the first paragraph. This cycle of perfectionism often leads to procrastination, frustration, and unfinished projects.
-				</p>
-				<p>
-					We created Do Not Stop Writing to solve this problem.
-				</p>
-				<p>
-					By encouraging uninterrupted writing sessions and rewarding completion, our tool helps writers develop momentum, improve focus, and produce more words in less time.
-				</p>
-				<p class="text-[17px] font-semibold text-neutral-900 dark:text-white pt-2 font-serif">
-					Our philosophy is simple:
-				</p>
-				<p class="text-xl italic font-semibold text-neutral-900 dark:text-white pl-4 border-l-2 border-neutral-300 dark:border-neutral-700">
-					Write first. Edit later.
-				</p>
-			</div>
-
-			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
-
-			<!-- How It Works Section -->
-			<div class="space-y-4 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300">
-				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-					How Do Not Stop Writing Works
-				</h2>
-				<p>
-					Getting started is easy.
-				</p>
-				<p>
-					Choose a writing challenge, set your target, and begin typing. During your writing session, the system encourages continuous writing and helps eliminate the temptation to stop and overthink.
-				</p>
-				<p class="text-neutral-500 dark:text-neutral-450 font-medium">
-					Depending on the selected mode:
-				</p>
-				<div class="space-y-3 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300">
-					<p>Set a custom writing timer</p>
-					<p>Set a target word count</p>
-					<p>Track progress in real time</p>
-					<p>Focus on uninterrupted writing</p>
-					<p>Complete your challenge to unlock your work</p>
-					<p>Build stronger writing habits through consistency</p>
-				</div>
-				<p>
-					Certain challenge modes may include penalties for stopping, helping users stay committed to their writing goals.
-				</p>
-			</div>
-
-			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
-
-			<!-- Key Features Section -->
+			<!-- Philosophy Section -->
 			<div class="space-y-6 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300">
 				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-					Key Features
+					Features
 				</h2>
 				<div class="space-y-6">
 					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Writing Challenges</h3>
-						<p>Create focused writing sessions that motivate you to keep moving forward.</p>
+						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Time & Word Goals</h3>
+						<p>Pick a writing timer (3–60 minutes) or a word-count target (250–2000 words), and track your progress in real time.</p>
 					</div>
 					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Word Count Goals</h3>
-						<p>Set personalized word targets and track your progress as you write.</p>
+						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Distraction-Free Interface</h3>
+						<p>No toolbars, margins, or spell-check underlines — just you, your thoughts, and a blinking cursor.</p>
 					</div>
 					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Writing Timer</h3>
-						<p>Practice timed writing sprints and improve your productivity.</p>
+						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Hardcore Blind Mode</h3>
+						<p>Permanently blur everything except the word you are typing, so you can't look back and self-edit mid-session.</p>
 					</div>
 					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Writer's Block Solution</h3>
-						<p>Break through creative barriers and generate ideas faster.</p>
-					</div>
-					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Distraction-Free Writing Environment</h3>
-						<p>Write in a clean interface designed for focus and concentration.</p>
-					</div>
-					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Browser-Based Writing Tool</h3>
-						<p>Access the platform from any modern browser without installing software.</p>
-					</div>
-					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Goal-Based Progress System</h3>
-						<p>Stay motivated with visible progress toward your writing objectives.</p>
-					</div>
-					<div>
-						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Copy and Export Unlocks</h3>
-						<p>Copying, exporting, or accessing completed work may remain restricted until you successfully finish your selected writing challenge.</p>
+						<h3 class="font-bold text-lg text-primary dark:text-white mb-1">Copy & Export Unlocks</h3>
+						<p>Copying and selecting are disabled while writing; finish your goal and download your draft in multiple formats.</p>
 					</div>
 				</div>
 			</div>
 
 			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
 
-			<!-- Benefits Section -->
+			<!-- Philosophy -->
 			<div class="space-y-4 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300">
 				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-					Benefits of Using Do Not Stop Writing
+					Our Philosophy
 				</h2>
-				<p class="text-neutral-500 dark:text-neutral-450 font-medium">
-					Writers use our platform to:
+				<p>
+					Writer's block is rarely a lack of ideas — it's the paralysis that comes from editing while you create. Every feature in Do Not Stop Writing is built around one goal:
 				</p>
-				<div class="space-y-3 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300">
-					<p>Overcome writer's block</p>
-					<p>Increase daily word count</p>
-					<p>Improve writing speed</p>
-					<p>Build a consistent writing habit</p>
-					<p>Reduce procrastination</p>
-					<p>Improve focus and concentration</p>
-					<p>Complete first drafts faster</p>
-					<p>Stay accountable to writing goals</p>
-					<p>Practice creative writing</p>
-					<p>Improve academic writing productivity</p>
-					<p>Develop stronger writing discipline</p>
-					<p>Enter a writing flow state more easily</p>
-				</div>
+				<p class="text-xl italic font-semibold text-neutral-900 dark:text-white pl-4 border-l-2 border-neutral-300 dark:border-neutral-700">
+					Helping you write without stopping. Write first. Edit later.
+				</p>
 			</div>
 
 			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
@@ -653,42 +478,7 @@ import ThemeToggle from '../components/ThemeToggle';
 					Privacy First
 				</h2>
 				<p>
-					We believe your writing belongs to you.
-				</p>
-				<p>
-					Do Not Stop Writing is designed to be simple, private, and accessible. We do not require account registration for basic use, and we strive to minimize data collection wherever possible.
-				</p>
-				<p>
-					Your writing sessions are intended to remain under your control, and we encourage users to review our <a href="/privacy" class="text-primary dark:text-white underline hover:opacity-85 font-semibold">Privacy Policy</a> for complete information regarding data handling and storage.
-				</p>
-			</div>
-
-			<hr class="border-t border-neutral-150 dark:border-neutral-900" />
-
-			<!-- Our Mission Section -->
-			<div class="space-y-4 text-base md:text-[17px] leading-[1.8] text-neutral-800 dark:text-neutral-300">
-				<h2 class="text-xl md:text-2xl font-bold text-primary dark:text-white tracking-tight">
-					Our Mission
-				</h2>
-				<p>
-					Our mission is to become one of the best free online writing tools for writers worldwide.
-				</p>
-				<p class="text-neutral-500 dark:text-neutral-450 font-medium">
-					We want to help people:
-				</p>
-				<div class="space-y-3 pl-4 border-l border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300">
-					<p>Write more consistently</p>
-					<p>Build confidence in their writing</p>
-					<p>Defeat procrastination</p>
-					<p>Overcome perfectionism</p>
-					<p>Develop productive writing habits</p>
-					<p>Finish more projects</p>
-				</div>
-				<p class="font-medium pt-2">
-					Every feature in Do Not Stop Writing is built around one goal:
-				</p>
-				<p class="text-xl italic font-semibold text-neutral-900 dark:text-white pl-4 border-l-2 border-neutral-300 dark:border-neutral-700">
-					Helping you write without stopping.
+					Your writing belongs to you. Drafts are processed entirely on your device and vanish when the session ends, and we minimize data collection wherever possible. See our <a href="/privacy" class="text-primary dark:text-white underline hover:opacity-85 font-semibold">Privacy Policy</a> for full details.
 				</p>
 			</div>
 
@@ -700,13 +490,7 @@ import ThemeToggle from '../components/ThemeToggle';
 					Contact Us
 				</h2>
 				<p>
-					Have a question, feature request, bug report, or suggestion?
-				</p>
-				<p>
-					We'd love to hear from you.
-				</p>
-				<p>
-					Visit our <a href="/contact" class="text-primary dark:text-white underline hover:opacity-85 font-semibold">Contact page</a> and help us improve Do Not Stop Writing for writers around the world.
+					Questions, feature requests, or bug reports? Email us directly at <a href="mailto:allrecord77@gmail.com" class="text-primary dark:text-white underline hover:opacity-85 font-semibold">allrecord77@gmail.com</a> or use our <a href="/contact" class="text-primary dark:text-white underline hover:opacity-85 font-semibold">Contact page</a>.
 				</p>
 			</div>
 		</div>
@@ -740,87 +524,6 @@ import ThemeToggle from '../components/ThemeToggle';
 </Layout>
 
 <style>
-	.deck-container {
-		perspective: 1200px;
-	}
-	
-	.profile-card {
-		transform-style: preserve-3d;
-		backface-visibility: hidden;
-		transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-					opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-					box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-		cursor: pointer;
-	}
-
-	/* Front state */
-	.profile-card[data-state="front"] {
-		z-index: 20;
-		transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-		opacity: 1;
-		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
-	}
-
-	/* Back state */
-	.profile-card[data-state="back"] {
-		z-index: 10;
-		transform: translate3d(20px, 14px, -40px) rotate(-4deg) scale(0.93);
-		opacity: 0.6;
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-	}
-
-	/* Deck container hover states for 3D parallax peeking */
-	.deck-container:hover .profile-card[data-state="front"] {
-		transform: translate3d(-6px, -4px, 15px) rotate(1.5deg) scale(1.02);
-		box-shadow: 0 28px 56px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.08);
-	}
-
-	.deck-container:hover .profile-card[data-state="back"] {
-		transform: translate3d(34px, 20px, -25px) rotate(-7deg) scale(0.95);
-		opacity: 0.85;
-		box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-	}
-
-	/* Shuffle Out Animation */
-	.profile-card.shuffle-out {
-		z-index: 30;
-		transform: translate3d(-130%, 15px, 80px) rotate(-18deg) scale(0.92) !important;
-		opacity: 0.85;
-		box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
-	}
-
-	/* Bio transition styles */
-	.bio-container {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
-		width: 100%;
-	}
-
-	.bio-panel {
-		grid-area: 1 / 1 / 2 / 2;
-		transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-					filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-					transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-					visibility 0.6s;
-	}
-
-	.bio-panel[data-state="active"] {
-		opacity: 1;
-		filter: blur(0px);
-		transform: scale(1);
-		pointer-events: auto;
-		visibility: visible;
-	}
-
-	.bio-panel[data-state="inactive"] {
-		opacity: 0;
-		filter: blur(12px);
-		transform: scale(0.96);
-		pointer-events: none;
-		visibility: hidden;
-	}
-
 	/* Hand-drawn felt-tip highlighter effect */
 	.hand-drawn-highlight {
 		background: linear-gradient(104deg, rgba(230,76,102,0.03) 0%, rgba(230,76,102,0.18) 1.5%, rgba(230,76,102,0.14) 4%, rgba(230,76,102,0.17) 96%, rgba(230,76,102,0.06) 98.5%, rgba(230,76,102,0) 100%);
