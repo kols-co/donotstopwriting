@@ -103,6 +103,19 @@ import ThemeToggle from '../components/ThemeToggle';
 						
 						<!-- Panel A: Send Start -->
 						<div id="panel-send" class="space-y-5">
+							<!-- Pre-Connection Drop Area -->
+							<div id="send-dropzone" class="border-2 border-dashed border-slate-300 dark:border-white/15 hover:border-blue-500/50 hover:bg-blue-500/5 rounded-2xl p-6 transition-all duration-200 flex flex-col items-center justify-center gap-3 cursor-pointer">
+								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-slate-500 dark:text-slate-400" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+									<polyline points="17 8 12 3 7 8"/>
+									<line x1="12" y1="3" x2="12" y2="15"/>
+								</svg>
+								<div class="space-y-1">
+									<p class="text-xs font-bold text-slate-900 dark:text-white">Drop files here to share</p>
+									<p class="text-[10px] text-slate-500 dark:text-slate-400">Or click to browse — they'll send once the receiver connects</p>
+								</div>
+								<input type="file" id="send-file-input" class="hidden" multiple />
+							</div>
 							<div class="text-center space-y-1">
 								<h3 class="text-md font-bold text-slate-900 dark:text-white">Create a Transfer Room</h3>
 								<p class="text-xs text-slate-600 dark:text-slate-400">Generates a unique 9-digit code for the receiver to connect.</p>
@@ -196,6 +209,7 @@ import ThemeToggle from '../components/ThemeToggle';
 							<div class="flex flex-col items-center justify-center gap-2 pt-1">
 								<div class="w-4 h-4 rounded-full border-2 border-blue-500/20 border-t-blue-500 animate-spin"></div>
 								<p class="text-[11px] text-slate-650 dark:text-slate-400">Waiting for receiver to connect...</p>
+								<p id="pending-files-info" class="text-[11px] font-bold text-blue-600 dark:text-blue-400 hidden"></p>
 							</div>
 						</div>
 
@@ -969,6 +983,15 @@ import ThemeToggle from '../components/ThemeToggle';
 			panelSharedActive.classList.remove('hidden');
 			connectionStatusText.innerText = `Connected as ${myUsername}`;
 			updatePresenceUI();
+
+			// If files were selected on the send dropzone before connecting, start sending now
+			if (pendingFilesOnConnect.length > 0) {
+				handleFileSelection(pendingFilesOnConnect);
+				pendingFilesOnConnect = [];
+				if (pendingFilesInfo) {
+					pendingFilesInfo.classList.add('hidden');
+				}
+			}
 		}
 
 		function addConnection(conn, isHost) {
@@ -1173,6 +1196,52 @@ import ThemeToggle from '../components/ThemeToggle';
 					receivedSize = 0;
 					fileMetadata = null;
 				}, 4000);
+			}
+		}
+
+		// --- SEND DROPZONE (Pre-Connection) ---
+		const sendDropzone = document.getElementById('send-dropzone');
+		const sendFileInput = document.getElementById('send-file-input');
+		const pendingFilesInfo = document.getElementById('pending-files-info');
+		let pendingFilesOnConnect = [];
+
+		if (sendDropzone && sendFileInput) {
+			sendDropzone.addEventListener('click', () => sendFileInput.click());
+
+			sendDropzone.addEventListener('dragover', (e) => e.preventDefault());
+			sendDropzone.addEventListener('dragenter', (e) => {
+				e.preventDefault();
+				sendDropzone.classList.add('send-dropzone-active');
+			});
+			sendDropzone.addEventListener('dragleave', () => {
+				sendDropzone.classList.remove('send-dropzone-active');
+			});
+			sendDropzone.addEventListener('drop', (e) => {
+				e.preventDefault();
+				sendDropzone.classList.remove('send-dropzone-active');
+				if (e.dataTransfer.files.length > 0) {
+					startSendWithFiles(e.dataTransfer.files);
+				}
+			});
+			sendFileInput.addEventListener('change', (e) => {
+				if (e.target.files.length > 0) {
+					startSendWithFiles(e.target.files);
+				}
+				e.target.value = '';
+			});
+		}
+
+		function startSendWithFiles(files) {
+			const hasOpenConnection = Object.values(connections).some(conn => conn.open);
+			if (!hasOpenConnection) {
+				pendingFilesOnConnect = Array.from(files);
+				initializeSender();
+				if (pendingFilesInfo) {
+					pendingFilesInfo.innerText = `${pendingFilesOnConnect.length} file(s) ready — sending as soon as a receiver connects.`;
+					pendingFilesInfo.classList.remove('hidden');
+				}
+			} else {
+				handleFileSelection(files);
 			}
 		}
 
@@ -1696,6 +1765,12 @@ import ThemeToggle from '../components/ThemeToggle';
 	:global(.dark) .app-card {
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	}
+
+	/* Pre-connection send dropzone active state */
+	.send-dropzone-active {
+		border-color: rgba(59, 130, 246, 0.7) !important;
+		background: rgba(59, 130, 246, 0.1) !important;
 	}
 
 	/* Fade-in transitions */
